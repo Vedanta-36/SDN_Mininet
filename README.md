@@ -179,12 +179,11 @@ pingall
  
 ---
  
-#### Screenshot — Scenario 1: pingall output
+#### Screenshot — Scenario 1: Testing Connectivity to all hosts
  
 <!-- Add screenshot here: shows h1→h3 blocked in pingall matrix -->
-```
-[ INSERT SCREENSHOT: pingall output showing X between h1 and h3 ]
-```
+
+![](results/Screenshot1.png)
  
 ---
  
@@ -209,12 +208,12 @@ h1 iperf -c 10.0.0.3 -t 5
  
 ---
  
-#### Screenshot — Scenario 2: iperf results
+#### Screenshot — Scenario 2: iperf results (Checking the Throughput)
  
 <!-- Add screenshot here: iperf showing throughput on h1→h2 and failure on h1→h3 -->
-```
-[ INSERT SCREENSHOT: iperf output — allowed path shows bandwidth, blocked shows failure ]
-```
+
+![Here we are checking the throughput](results/Screenshot2.png)
+
  
 ---
  
@@ -236,9 +235,9 @@ sh ovs-ofctl dump-flows s1 | grep "n_packets"
 #### Screenshot — Flow table with drop rule
  
 <!-- Add screenshot here: ovs-ofctl dump-flows showing priority=100 drop rule with n_packets counter -->
-```
-[ INSERT SCREENSHOT: ovs-ofctl dump-flows s1 output — show priority=100 rule with n_packets > 0 ]
-```
+
+![](results/Screenshot3.png)
+
  
 ---
  
@@ -277,12 +276,11 @@ h1 ping -c 4 h3
  
 ---
  
-#### Screenshot — Regression: flow table after stress
+#### Screenshot — Regression: Flow table after stress
  
 <!-- Add screenshot here: dump-flows after 50 pings showing n_packets >= 50 and rule still present -->
-```
-[ INSERT SCREENSHOT: ovs-ofctl dump-flows after regression test — n_packets counter and rule intact ]
-```
+
+![](results/Screenshot4.png)
  
 ---
  
@@ -321,27 +319,25 @@ ip.src == 10.0.0.1 && ip.dst == 10.0.0.2
 #### Screenshot — Wireshark: blocked traffic (no replies)
  
 <!-- Add screenshot here: Wireshark showing ICMP requests from 10.0.0.1 to 10.0.0.3 with no echo-reply -->
-```
-[ INSERT SCREENSHOT: Wireshark capture — echo-request visible, no echo-reply from 10.0.0.3 ]
-```
+
+![](results/Screenshot5.png)
  
 ---
  
 #### Screenshot — Wireshark: allowed traffic (request + reply)
  
 <!-- Add screenshot here: Wireshark showing h1→h2 ICMP with both request and reply visible -->
-```
-[ INSERT SCREENSHOT: Wireshark capture — both echo-request and echo-reply visible for h1→h2 ]
-```
+
+![](results/Screenshot6.png)
  
 ---
  
 #### Screenshot — Ryu controller logs
  
 <!-- Add screenshot here: Ryu terminal showing "DROP rule installed" and switch connection logs -->
-```
-[ INSERT SCREENSHOT: Ryu terminal output showing controller-switch interaction and drop rule installation ]
-```
+
+![](results/Screenshot7.png)
+
  
 ---
  
